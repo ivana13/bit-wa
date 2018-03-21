@@ -15,8 +15,17 @@ class App extends Component {
     }
   }
 
+  handeStates = () => {
+
+    this.setState({
+      isListView: !this.state.isListView
+    });
+    // this.setState({nameIcon});
+    console.log("click");
+  }
+
   componentDidMount() {
-  this.loadUsers();
+    this.loadUsers();
   }
 
   loadUsers = () => {
@@ -28,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header handleRefresh={this.loadUsers} isListView={this.state.isListView} />
+        <Header click={this.handeStates}  handleRefresh={this.loadUsers} />
         <Main users={this.state.users} isListView={this.state.isListView} />
 
         <Footer />

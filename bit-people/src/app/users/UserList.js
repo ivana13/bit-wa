@@ -7,11 +7,11 @@ const UserList = (props) => {
 
     const { users, isListView } = props
 
-    // const renderGrid = (users) => {
-    //     return users.map((user, index) => {
-    //         return <UserGrid key={index} user={user} />
-    //     })
-    // }
+    const renderGrid = (users) => {
+        return users.map((user, index) => {
+            return <UserGrid key={index} user={user} />
+        })
+    }
 
     const renderList = (users) => {
         return users.map((user, index) => {
@@ -19,9 +19,18 @@ const UserList = (props) => {
         })
     }
 
+    const renderView = () => {
+                        
+        if(isListView) {
+            return renderList(users)
+        } else {
+            return renderGrid(users)
+        }
+    }
+
     return (
         <ul className="collection">
-            {renderList(users)}
+            {renderView()}
         </ul>
 
 
