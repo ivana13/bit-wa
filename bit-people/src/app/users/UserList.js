@@ -20,24 +20,30 @@ const UserList = (props) => {
     }
 
     const renderView = () => {
-                        
-        if(isListView) {
-            return renderList(users)
-        } else {
-            return renderGrid(users)
-        }
-    }
 
-    return (
-        <ul className="collection">
-            {renderView()}
-        </ul>
+        if (isListView) {
+            return (
+                <ul className="collection">
+                    {renderList(users)}
+                </ul>
+            )
+        } else {
+            return (
+                <div className='row'>
+                    {renderGrid(users)}
+                </div>)
+
+        }
 
 
         // <div className="row">
         // {renderGrid(users)}
         // </div>
-    )
+    }
+
+
+    return renderView()
+    
 }
 
 UserList.propTypes = {

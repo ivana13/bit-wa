@@ -9,7 +9,8 @@ const UserGrid = (props) => {
     }
 
     return (
-        <div className="col s12 m4 l3">
+
+        <div className="col m4">
             <div className="card">
                 <div className="card-image">
                     <img src={user.image} />
@@ -23,6 +24,7 @@ const UserGrid = (props) => {
                 </div>
             </div>
         </div>
+
     )
 }
 

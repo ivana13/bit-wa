@@ -8,12 +8,14 @@ const UserItem = (props) => {
     }
 
     return (
+     
         <li className="collection-item avatar">
             <img src={user.image} alt="" className="circle" />
             <span className="title">{user.firstName}</span>
             <p>{user.email}</p>
             <p>{user.dateOfBirth}</p>
         </li>
+    
     )
 }
 
