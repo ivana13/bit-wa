@@ -4,7 +4,7 @@ const UserItem = (props) => {
     const { user } = props;
 
     if(!user) {
-        return <h3>Nothing here</h3>
+        return <h3>no</h3>
     }
 
     return (

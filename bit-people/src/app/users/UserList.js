@@ -1,12 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { UserItem } from './UserItem';
+import { UserGrid } from './UserGrid';
 
 const UserList = (props) => {
 
-    const { users } = props
-    
-    const renderUsers = (users) => {
+    const { users, isListView } = props
+
+    // const renderGrid = (users) => {
+    //     return users.map((user, index) => {
+    //         return <UserGrid key={index} user={user} />
+    //     })
+    // }
+
+    const renderList = (users) => {
         return users.map((user, index) => {
             return <UserItem key={index} user={user} />
         })
@@ -14,8 +21,13 @@ const UserList = (props) => {
 
     return (
         <ul className="collection">
-            {renderUsers(users)}
+            {renderList(users)}
         </ul>
+
+
+        // <div className="row">
+        // {renderGrid(users)}
+        // </div>
     )
 }
 

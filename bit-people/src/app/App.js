@@ -10,23 +10,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      isListView: true
     }
   }
 
   componentDidMount() {
-    userService.fetchUsers()
-      .then(users => this.setState({users:users}))
-
+  this.loadUsers();
   }
 
+  loadUsers = () => {
+    userService.fetchUsers()
+    .then(users => this.setState({users:users}));
+  }
  
 
   render() {
     return (
       <div>
-        <Header />
-        <Main users={this.state.users} />
+        <Header handleRefresh={this.loadUsers} isListView={this.state.isListView} />
+        <Main users={this.state.users} isListView={this.state.isListView} />
 
         <Footer />
       </div>

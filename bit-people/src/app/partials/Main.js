@@ -3,11 +3,11 @@ import { UserList } from '../users/UserList';
 
 
 const Main = (props) => {
-    const {users} = props;
-    
+    const {users, isListView} = props;
+
     return (
         <div className="container">
-            <UserList users={users} />
+            <UserList users={users} isListView={isListView} />
         </div>
     )
 }
